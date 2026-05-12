@@ -1,0 +1,90 @@
+\input{utilities}
+\usepackage{blindtext}  
+\usepackage{lipsum}
+
+\def\lrand{\lipsum[-]}
+\def\firstname{Firstname}
+\def\lastname{Lastname}
+\def\email{your_email@example.com}
+\def\linkedin{https://linkedin.com/in/yourprofile}
+\def\github{https://github.com/yourgithub}
+\def\jasphone{+000 00 00 00 00}
+
+\def\jbegin{\resumeItemListStart}
+\def\jitem{\resumeItem}
+\def\jend{\resumeItemListEnd}
+
+\def\skills{
+    \jbegin
+        \jitem{\textbf{Networking & Security:} Example tools/skills}
+        \jitem{\textbf{Systems & Virtualization:} Example tools/skills}
+        \jitem{\textbf{Cloud Computing:} Example platforms}
+        \jitem{\textbf{DevOps & Programming:} Example stack}
+    \jend
+}
+
+\def\certifications{
+    \jbegin
+        \jitem{\textbf{Certification Provider -} Certification Title}
+        \jitem{\textbf{Certification Provider -} Certification Title}
+        \jitem{\textbf{Certification Provider -} Certification Title}
+        \jitem{\textbf{Certification Provider -} Certification Title}
+    \jend
+}
+
+\def\langs{
+    \centerline{
+        \textbf{Language 1} (Level) \quad
+        \textbf{Language 2} (Level) \quad
+        \textbf{Language 3} (Level)
+    }
+}
+
+\EducationTemplate{College}
+{StartYear}{EndYear}{University/School Name}
+{Degree or Program Title}
+{extra}
+
+\ExpTemplate{project1}
+{Technologies Used}
+{Project Title Placeholder}
+{Project Date Placeholder}
+{
+\jbegin
+    \jitem{Highlight 1 of the project}
+    \jitem{Highlight 2 of the project}
+    \jitem{Highlight 3 of the project}
+    \jitem{Highlight 4 of the project}
+    \jitem{Highlight 5 of the project}
+\jend
+}
+
+\ExpTemplate{project2}
+{Technologies Used}
+{Project Title Placeholder}
+{Project Date Placeholder}
+{
+\jbegin
+    \jitem{Highlight 1 of the project}
+    \jitem{Highlight 2 of the project}
+    \jitem{Highlight 3 of the project}
+    \jitem{Highlight 4 of the project}
+    \jitem{Highlight 5 of the project}
+\jend
+}
+
+\StageTemplate{stage}
+{Internship Date Placeholder}
+{Technologies Used}
+{Internship Title Placeholder}
+{Company/Organization Placeholder}
+{
+\jbegin
+    \jitem{Highlight 1 of the internship}
+    \jitem{Highlight 2 of the internship}
+    \jitem{Highlight 3 of the internship}
+    \jitem{Highlight 4 of the internship}
+    \jitem{Highlight 5 of the internship}
+\jend
+}
+
