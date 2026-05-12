@@ -1,0 +1,27 @@
+\usepackage{forarray}
+
+\newcommand{\EducationTemplate}[6]{
+  \DefineArrayVar{#1}{@}
+  {|}{Start|End|School|Course|Stream}
+  {|}{{#2}|{#3}|{#4}|{#5}|{#6}}
+}
+
+\newcommand{\ExpTemplate}[5]{
+  \DefineArrayVar{#1}{@}
+  {|}{Designation|Company|Location|Highlights}
+  {|}{{#2}|{#3}|{#4}|{#5}}
+}
+
+\newcommand{\StageTemplate}[6]{
+  \DefineArrayVar{#1}{@}
+  {|}{Start|Designation|Company|Location|Highlights}
+  {|}{{#2}|{#3}|{#4}|{#5}|{#6}}
+}
+
+\newcommand{\HckTemplate}[5]{
+  \DefineArrayVar{#1}{@}
+  {|}{Date|Title|Position|Highlights}
+  {|}{{#2}|{#3}|{#4}|{#5}}
+}
+
+\def\sett#1#2#3{\expandafter\def\csname#1#2\endcsname{#3}}
