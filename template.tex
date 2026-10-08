@@ -1,0 +1,221 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{forarray}
+
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\describe}[2]{\csname #1@#2\endcsname}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}\item
+  \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textbf{\small #2} \\
+    \textit{\small#3} & \textbf{\small #4} \\
+  \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small #2} \\
+  \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & \textbf{\small #2}\\
+  \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}, topsep=0pt, partopsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=1pt, partopsep=0pt, parsep=0pt, itemsep=1.5pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{2pt}}
+
+\newcommand{\EducationTemplate}[6]{
+  \DefineArrayVar{#1}{@}
+  {|}{Start|End|School|Course|Stream}
+  {|}{{#2}|{#3}|{#4}|{#5}|{#6}}
+}
+
+\newcommand{\ExpTemplate}[5]{
+  \DefineArrayVar{#1}{@}
+  {|}{Designation|Company|Location|Highlights}
+  {|}{{#2}|{#3}|{#4}|{#5}}
+}
+
+\newcommand{\StageTemplate}[6]{
+  \DefineArrayVar{#1}{@}
+  {|}{Start|Designation|Company|Location|Highlights}
+  {|}{{#2}|{#3}|{#4}|{#5}|{#6}}
+}
+
+\def\sett#1#2#3{\expandafter\def\csname#1#2\endcsname{#3}}
+
+% -------------------- PERSONAL INFORMATION --------------------
+\def\firstname{Firstname}
+\def\lastname{Lastname}
+\def\email{firstname.lastname@example.com}
+\def\linkedin{https://linkedin.com/in/username}
+\def\github{https://github.com/username}
+\def\jasphone{+1 (555) 000-0000}
+
+\def\jbegin{\resumeItemListStart}
+\def\jitem{\resumeItem}
+\def\jend{\resumeItemListEnd}
+
+% -------------------- TECHNICAL SKILLS --------------------
+\def\achievements{
+  \jbegin
+    \jitem{\textbf{Languages:} Python, Java, TypeScript, JavaScript, C/C++, SQL, Bash}
+    \jitem{\textbf{Cloud \& DevOps:} AWS, Docker, Kubernetes, CI/CD (GitHub Actions), Terraform, Linux}
+    \jitem{\textbf{Frameworks \& Libraries:} React, Next.js, Spring Boot, FastAPI, Node.js, PostgreSQL}
+    \jitem{\textbf{Tools \& Practices:} Git, Prometheus, Grafana, REST APIs, Microservices, Agile/Scrum}
+    \jitem{\textbf{Languages (Spoken):} English (Fluent) \quad$|$\quad Spanish (Intermediate) \quad$|$\quad French (Basic)}
+  \jend
+}
+
+% -------------------- CERTIFICATIONS --------------------
+\def\certifications{
+  \jbegin
+    \jitem{\textbf{AWS Certified Solutions Architect -- Associate} \hfill \textit{Amazon Web Services}}
+    \jitem{\textbf{Certified Kubernetes Administrator (CKA)} \hfill \textit{Cloud Native Computing Foundation}}
+    \jitem{\textbf{Terraform Associate Certification} \hfill \textit{HashiCorp}}
+  \jend
+}
+
+% -------------------- EDUCATION DATA --------------------
+\EducationTemplate{College}{2020}{2024}{University / College Name}{Bachelor of Science in Computer Science}{}
+
+% -------------------- EXPERIENCE DATA --------------------
+\StageTemplate{exp1}{June 2023 -- Aug 2023}{Python, Docker, GitHub Actions, PostgreSQL, AWS}{Software Engineering Intern}{Company Name (City, State / Remote)}{
+  \jbegin
+    \jitem{Architected and deployed automated CI/CD workflows using GitHub Actions, reducing deployment cycle times by 40\%}
+    \jitem{Engineered scalable REST APIs serving 50k+ daily requests with optimized SQL queries and caching strategies}
+    \jitem{Containerized backend services with Docker and orchestrated microservices deployments on AWS ECS}
+    \jitem{Collaborated with senior engineers on system architecture design, code reviews, and comprehensive unit/integration testing}
+  \jend
+}
+
+\StageTemplate{exp2}{June 2022 -- Aug 2022}{Linux, Bash, Python, Prometheus, Grafana}{DevOps / Infrastructure Intern}{Organization Name (City, State)}{
+  \jbegin
+    \jitem{Implemented centralized monitoring and alerting dashboards with Prometheus and Grafana across 20+ servers}
+    \jitem{Automated routine system provisioning and routine backup procedures using Bash and Python scripts}
+    \jitem{Troubleshooted network protocols and server infrastructure to maintain 99.9\% uptime across internal staging environments}
+  \jend
+}
+
+% -------------------- PROJECTS DATA --------------------
+\ExpTemplate{project1}{Kubernetes, Docker, FastAPI, Prometheus, Helm}{Cloud-Native Microservices Platform}{Fall 2023}{
+  \jbegin
+    \jitem{Built a resilient distributed application deployed on a local Kubernetes cluster using Helm charts for configuration management}
+    \jitem{Implemented custom Prometheus metrics and Grafana dashboards for real-time observability and health monitoring}
+    \jitem{Configured automated failover mechanisms and horizontal pod autoscaling under simulated peak traffic loads}
+  \jend
+}
+
+\ExpTemplate{project2}{React, Next.js, TypeScript, Tailwind CSS, PostgreSQL}{Full-Stack Web Application}{Spring 2023}{
+  \jbegin
+    \jitem{Designed responsive frontend interfaces utilizing Next.js, TypeScript, and modern component design patterns}
+    \jitem{Developed secure user authentication flows with session management and role-based access control (RBAC)}
+    \jitem{Integrated third-party payment and transactional email APIs to provide complete end-to-end user workflows}
+  \jend
+}
+
+% -------------------- TITLE / HEADER --------------------
+\def\titlesection{
+  \begin{center}
+    {\Huge \scshape \firstname\ \lastname} \\[3pt]
+    \small
+    \jasphone \ \ $|$ \ \ 
+    \href{mailto:\email}{\underline{\email}} \ \ $|$ \ \ 
+    \href{\linkedin}{\underline{linkedin.com/in/username}} \ \ $|$ \ \ 
+    \href{\github}{\underline{github.com/username}}
+    \vspace{-4pt}
+  \end{center}
+}
+
+\newcommand{\renderExp}[1]{
+  \resumeSubheading
+    {\csname #1@Company\endcsname}{\csname #1@Start\endcsname\ \csname #1@End\endcsname}
+    {\csname #1@Designation\endcsname}{\csname #1@Location\endcsname}
+    \csname #1@Highlights\endcsname
+}
+
+% -------------------- DOCUMENT BODY --------------------
+\begin{document}
+\titlesection
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading{\csname College@School\endcsname}{\csname College@Start\endcsname\ -- \csname College@End\endcsname}{\csname College@Course\endcsname\ \csname College@Stream\endcsname}{}
+\resumeSubHeadingListEnd
+
+\section{Professional Experience}
+\resumeSubHeadingListStart
+  \renderExp{exp1}
+  \renderExp{exp2}
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \renderExp{project1}
+  \renderExp{project2}
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\achievements
+
+\section{Certifications}
+\certifications
+
+\end{document}
