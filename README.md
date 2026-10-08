@@ -1,23 +1,62 @@
 # LaTeX Resume Template
 
-A clean, modern, ATS-friendly **LaTeX résumé/CV template** designed for software engineers, DevOps practitioners, and tech professionals. 
+A clean, modern, ATS-friendly **LaTeX résumé/CV template** designed for software engineers, DevOps practitioners, and tech professionals.
 
 Everything is self-contained in a single, customizable file: [`template.tex`](./template.tex).
 
 ---
 
-## 📂 Structure
+## 📄 Preview
 
-- **`template.tex`** → Self-contained resume template containing layout styling, macros, personal information, education, experience, projects, and skills.
+<p align="center">
+  <img src="./preview.png" alt="Resume Preview" width="700" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px;" />
+</p>
+
+---
+
+## ⚙️ How to Generate PDF
+
+To directly compile and generate `template.pdf` from `template.tex`:
+
+### Option 1: Using `pdflatex` (TeX Live, MiKTeX, MacTeX)
+Run the following command in your terminal:
+```bash
+pdflatex template.tex
+```
+This will compile and output `template.pdf` directly in the current directory.
+
+> **Tip:** Running it a second time ensures all cross-references and page counts are updated:
+> ```bash
+> pdflatex template.tex && pdflatex template.tex
+> ```
+
+### Option 2: Using `tectonic` (Zero-setup modern TeX engine)
+If you prefer not to manage LaTeX package managers, install [Tectonic](https://tectonic-typesetting.github.io/) and run:
+```bash
+tectonic template.tex
+```
+Tectonic automatically downloads required fonts and packages on-the-fly and generates `template.pdf`.
+
+### Option 3: Online via Overleaf
+1. Open [Overleaf](https://www.overleaf.com/) and create a new blank project.
+2. Replace `main.tex` with the contents of [`template.tex`](./template.tex) (or upload `template.tex`).
+3. Click **Recompile**.
+
+---
+
+## 📂 Repository Structure
+
+- **`template.tex`** → Single, self-contained LaTeX document containing layout definitions, formatting macros, and all content sections.
+- **`preview.png`** → High-resolution visual preview of the compiled resume.
 
 ---
 
 ## ✏️ How to Customize
 
-Open `template.tex` and modify the relevant sections:
+Open `template.tex` and modify the sections with your information:
 
 ### 1. Personal Information & Header
-Update the contact definition block:
+Update your contact details in the definitions block:
 ```latex
 \def\firstname{Firstname}
 \def\lastname{Lastname}
@@ -28,13 +67,13 @@ Update the contact definition block:
 ```
 
 ### 2. Education
-Define your degree and institution:
+Define your degree, years, institution, and major:
 ```latex
 \EducationTemplate{College}{StartYear}{EndYear}{University / College Name}{Degree Title}{}
 ```
 
 ### 3. Experience & Internships
-Add work experience using `StageTemplate`:
+Define your roles using `StageTemplate`:
 ```latex
 \StageTemplate{id}{Date Range}{Key Technologies}{Role / Designation}{Company Name (Location)}{
   \jbegin
@@ -49,7 +88,7 @@ Render it in the document body:
 ```
 
 ### 4. Projects
-Add projects using `ExpTemplate`:
+Define projects using `ExpTemplate`:
 ```latex
 \ExpTemplate{id}{Technologies Used}{Project Title}{Date}{
   \jbegin
@@ -64,22 +103,5 @@ Render it in the document body:
 ```
 
 ### 5. Technical Skills & Certifications
-- Edit `\achievements` to categorize your technical competencies (Languages, Cloud/DevOps, Frameworks, Tools).
-- Edit `\certifications` to list your verified credentials.
-
----
-
-## ⚙️ Compilation
-
-### Local Compilation (PDFLaTeX)
-```bash
-pdflatex template.tex
-```
-
-### Local Compilation (Tectonic)
-```bash
-tectonic template.tex
-```
-
-### Overleaf
-Upload `template.tex` directly into Overleaf with `pdfLaTeX` or `XeLaTeX` compiler.
+- **`\achievements`**: Organize your skills by category (e.g., Languages, Cloud & DevOps, Frameworks, Tools).
+- **`\certifications`**: List your industry certifications and issuing organizations.
